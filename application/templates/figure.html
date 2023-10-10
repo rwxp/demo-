@@ -1,0 +1,21 @@
+{% extends "layout.html" %} {% block aditional%}
+<div class="site-header-logo">
+  <h1 class="text-center"></h1>
+</div>
+<div class="row p-4">
+  <div class="card m-auto" style="width: 90%"></div>
+  <div class="card-body">
+    <div id="chart1"></div>
+    <p>
+      Los Univallunos si que se enferman llave, la estadistica de las
+      enfermedades mas usuales en la poblacion uniperruna se encuentra en la
+      gráfica anterior.
+    </p>
+  </div>
+</div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+  var graph1= {{fig_json | safe }};
+  Plotly.plot("chart1", graph1, {})
+</script>
+{%endblock%}
